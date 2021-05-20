@@ -1,14 +1,27 @@
 # Skid Steering Odometry
 The C++ ROS code is used to compute the odometry of skid steering mobile robot.
 
-### How to run dynamic reconfigure ###
+## Contents
+- Skid Steering Odometry
+  - [1. Introduction](#1-introduction)
+  - [2. Working](#2-working)
+  - [3. Setup](#3-setup)
+  - [4. Run](#4-run)
+    - [i. Setup parameters](#i-setup-parameters)
+    - [ii. Visualize Rosbag](#ii-visualize-rosbag)
+    - [iii. Run Skid Steering](#iii-run-skid-steering)
 
-    cd <workspace>
-    catkin build
-    source devel/setup.bash
-    roslaunch skid_steering dyanmic_test.launch
+## 1. Introduction
 
-### How to run rosbag and visualize ###
+## 2. Working
+
+## 3. Setup
+
+## 4. Run
+
+### i. Setup parameters
+
+### ii. Visualize Rosbag
 
     cd <workspace>
     catkin build
@@ -21,14 +34,7 @@ The above command runs bag1 as default. If you want to run a specific bag follow
 
 Options avalilable for bag_file_name are bag2 and bag3.
 
-### How to run dynamic reconfigure ###
-
-    cd <workspace>
-    catkin build
-    source devel/setup.bash
-    roslaunch skid_steering dyanmic_test.launch
-
-### How to run skid steering ###
+### iii. Run Skid Steering
 
     cd <workspace>
     catkin build

@@ -87,9 +87,6 @@ include_directories(
 add_library(odometry
   src/odometry.cpp
 )
-add_executable(dyanamic_test src/dyanamic_test.cpp)
-target_link_libraries(dyanamic_test ${catkin_LIBRARIES})
-add_dependencies(dyanamic_test ${PROJECT_NAME}_gencfg)
 
 add_executable(tf_publisher src/tf_publisher.cpp)
 target_link_libraries(tf_publisher ${catkin_LIBRARIES})
