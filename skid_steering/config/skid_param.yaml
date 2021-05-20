@@ -1,0 +1,12 @@
+enable_odom_tf: True
+base_frame_id: 'base_link'
+odom_frame_id: 'odom'
+wheel_subscriber_timeout: 0.05 # In seconds
+wheel_separation: 0.583
+wheel_radius: 0.1575
+chi: 1.7
+integration_method: 0
+gear_ratio: 40
+initial_x: 0
+initial_y: 0
+initial_theta: 0 # In degree

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>skid_steering</name>
+  <version>0.0.0</version>
+  <description>The skid_steering package</description>
+
+  <maintainer email="avinashumeshsarma@gmail.com">Avinash Umesh Sarma</maintainer>
+  <maintainer email="dennyboby123@gmail.com">Denny Boby</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>tf</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>geometry_msgs</depend>
+  <depend>realtime_tools</depend>
+  <depend>nav_msgs</depend>
+  <depend>boost</depend>
+  <depend>robotics_hw1</depend>
+  <depend>message_runtime</depend>
+  <depend>message_filters</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

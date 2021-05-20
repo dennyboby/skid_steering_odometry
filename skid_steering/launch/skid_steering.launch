@@ -1,0 +1,19 @@
+<launch>
+    <arg name="bag_file_name" default="bag1"/>
+    <arg name="run_bag" default="false"/>
+
+    <rosparam command="load"
+        file="$(find skid_steering)/config/skid_param.yaml" />
+
+    <node name="static_tf_publisher_node" pkg="skid_steering" type="static_tf_publisher" 
+                                                                    output="screen"/>
+
+    <node pkg="rviz" type="rviz" name="rviz" 
+        args="-d $(find skid_steering)/rviz/visualize_bag.rviz"/>
+
+    <node name="skid_steering_node" pkg="skid_steering" type="skid_steering" output="screen"/>
+
+    <node pkg="rosbag" type="play" name="rosbag_play" output="screen" 
+        args="--clock $(find skid_steering)/data/$(arg bag_file_name).bag" if="$(arg run_bag)"/>
+
+</launch>
