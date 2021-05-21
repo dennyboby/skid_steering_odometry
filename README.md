@@ -13,10 +13,10 @@ The C++ ROS code is used to compute the odometry of skid steering mobile robot.
   - [5. Output](#5-output)
 
 ## 1. Introduction
-This repo contains the C++ code to compute the odometry of a skid steering robot and visualize it on RViz. The code is impplemented on ROS so it requires ROS installation on computer to run it. The code is based on paper and ppt present in this [docs folder](https://github.com/dennyboby/skid_steering_odometry/tree/master/docs/document). 
+This repo contains the C++ code to compute the odometry of a skid steering robot and visualize it on RViz. The code is implemented on ROS so it requires ROS installation on computer to run it. The code is based on paper and ppt present in this [docs folder](https://github.com/dennyboby/skid_steering_odometry/tree/master/docs/document). 
 
 ## 2. Working
-The skid_steering.cpp subcribes to four wheel velocity topic published by the rosbag present in [data folder](https://github.com/dennyboby/skid_steering_odometry/tree/master/skid_steering/data). These velocity messages are filtered so that the velocities used are approximatelly syncronous in time. The [skid steering parameters](https://github.com/dennyboby/skid_steering_odometry/tree/master/skid_steering/config/skid_param.yaml) are loaded into parameter server so that skid_steering.cpp can use them to set odometery params and other params. The odometry.cpp uses either euler integration or runge-kutta integration to compute the pose of the robot. This pose is published by the skid_steering.cpp via /odom topic and tf. A custom message containing odometry and integration method is also published on /custom_odom topic. Dynamic reconfigure can be used to change the integration method at runtime. Also two services(/reset_odom and /set_odom_pose) are available to reset the odometry to (0,0,0) and set the odometry to a specific pose. The odometry published by skid_steering.cpp is visualized on RViz and compared with manufacturers odometry(/scout_odom topic) published by the rosbag.
+The skid_steering.cpp subcribes to four wheel velocity topic published by the rosbag present in [data folder](https://github.com/dennyboby/skid_steering_odometry/tree/master/skid_steering/data). These velocity messages are filtered so that the velocities used are approximately syncronous in time. The [skid steering parameters](https://github.com/dennyboby/skid_steering_odometry/tree/master/skid_steering/config/skid_param.yaml) are loaded into parameter server so that skid_steering.cpp can use them to set odometery params and other params. The odometry.cpp uses either euler integration or runge-kutta integration to compute the pose of the robot. This pose is published by the skid_steering.cpp via /odom topic and tf. A custom message containing odometry and integration method is also published on /custom_odom topic. Dynamic reconfigure can be used to change the integration method at runtime. Also two services(/reset_odom and /set_odom_pose) are available to reset the odometry to (0,0,0) and set the odometry to a specific pose. The odometry published by skid_steering.cpp is visualized on RViz and compared with manufacturers odometry(/scout_odom topic) published by the rosbag.
 
 #### RQT Graph
 ![rqt_graph](docs/img/rqt_graph.png)
@@ -39,7 +39,7 @@ Source each new terminal by running the following command below.
     source ~/skid_steering_ws/devel/setup.bash
 
 ## 4. Run
-This section discusses the setup of parameters and running different launch file.
+This section discusses the setup of parameters and running different launch files.
 
 ### i. Setup parameters
 The parameters that needs to configured can be found in the [skid_param.yaml](https://github.com/dennyboby/skid_steering_odometry/tree/master/skid_steering/config/skid_param.yaml)
@@ -70,10 +70,10 @@ The above command runs bag1 as default. If you want to customize the launch to y
     roslaunch skid_steering skid_steering.launch bag_file_name:=<name of the bag> run_bag:=<true or false>
 
 Params available for skid_steering.launch
-| Parameter Name | Description                     | Default Value | Options          |
-|----------------|---------------------------------|---------------|------------------|
-| bag_file_name  | Name of the bag file to run     | bag1          | bag1, bag2, bag3 |
-| run_bag        | Set false for rosbag separately | true          | true, false      |
+| Parameter Name | Description                        | Default Value | Options          |
+|----------------|------------------------------------|---------------|------------------|
+| bag_file_name  | Name of the bag file to run        | bag1          | bag1, bag2, bag3 |
+| run_bag        | Set false to run rosbag separately | true          | true, false      |
 
 ## 5. Output
 As you can see in the image below the green arrow shows the manufacturer's odometry(/scout_odom) and the red arrow shows the odometry computed from code(/odom). The tf tree is also visualized.
