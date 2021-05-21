@@ -1,12 +1,12 @@
-enable_odom_tf: True
-base_frame_id: 'base_link'
-odom_frame_id: 'odom'
-wheel_subscriber_timeout: 0.05 # In seconds
-wheel_separation: 0.583
-wheel_radius: 0.1575
-chi: 1.7
-integration_method: 0
-gear_ratio: 40
-initial_x: 0
-initial_y: 0
-initial_theta: 0 # In degree
+enable_odom_tf: True # Publish transform between odom frame and base frame
+base_frame_id: 'base_link' # Name of robot base frame
+odom_frame_id: 'odom' # Name of odom frame
+wheel_subscriber_timeout: 0.05 # Wheel subscriber timeout in seconds
+wheel_separation: 0.583 # Separation between left and right wheels
+wheel_radius: 0.1575 # Radius of the wheel
+chi: 1.7 # Skidding multiplication factor
+integration_method: 0 # Method to use for integration (0 for Euler and 1 for RungeKutta)
+gear_ratio: 40 # Gear ratio between motor and wheel
+initial_x: 0 # Initial x position of odom frame
+initial_y: 0 # Initial y position of odom frame
+initial_theta: 0 # Initial orientation of odom frame in degree

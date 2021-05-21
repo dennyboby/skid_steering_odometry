@@ -1,3 +1,0 @@
-<launch>
-  <node name="dyanamic_test_node" pkg="skid_steering" type="dyanamic_test" output="screen"/>
-</launch>

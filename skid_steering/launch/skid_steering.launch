@@ -1,6 +1,6 @@
 <launch>
     <arg name="bag_file_name" default="bag1"/>
-    <arg name="run_bag" default="false"/>
+    <arg name="run_bag" default="true"/>
 
     <rosparam command="load"
         file="$(find skid_steering)/config/skid_param.yaml" />
